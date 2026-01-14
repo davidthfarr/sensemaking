@@ -3,47 +3,130 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Detecting Emerging Narratives in Relation to Venezuela</title>
+  <title>Emerging Narrative Detection in Relation to Venezuela</title>
+
   <style>
-  @media (max-width: 700px) {
-    .wrap { padding-right: 18px; }
-  }
-</style>
-  <style>
-    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:#0b0f14; color:#e7edf5; }
-    .wrap { max-width: 980px; margin: 0 auto; padding: 28px 18px 60px; }
-    h1 { font-size: 28px; margin: 0 0 10px; }
-    h2 { font-size: 18px; margin: 26px 0 8px; }
-    p, li { line-height: 1.5; color:#c9d4e3; }
-    .card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.10); border-radius: 14px; padding: 16px; margin: 14px 0; }
-    .btnrow { display:flex; gap:10px; flex-wrap:wrap; margin-top: 12px; }
-    a.btn { display:inline-block; text-decoration:none; color:#0b0f14; background:#9bd3ff; padding:10px 14px; border-radius: 10px; font-weight: 650; }
-    a.btn.secondary { background: rgba(155,211,255,0.18); color:#e7edf5; border:1px solid rgba(155,211,255,0.35); }
-    code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px; }
-    .grid { display:grid; grid-template-columns: 1fr; gap: 10px; }
-    @media (min-width: 900px) { .grid { grid-template-columns: 1fr 1fr; } }
-    .small { font-size: 13px; color:#9fb0c6; }
-    .hr { height:1px; background: rgba(255,255,255,0.10); margin: 18px 0; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #0b0f14;
+      color: #e7edf5;
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 18px 60px;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin: 0 0 10px;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin: 26px 0 8px;
+    }
+
+    p, li {
+      line-height: 1.5;
+      color: #c9d4e3;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 14px;
+      padding: 16px;
+      margin: 14px 0;
+    }
+
+    .btnrow {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    a.btn {
+      display: inline-block;
+      text-decoration: none;
+      color: #0b0f14;
+      background: #9bd3ff;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: 650;
+    }
+
+    a.btn.secondary {
+      background: rgba(155,211,255,0.18);
+      color: #e7edf5;
+      border: 1px solid rgba(155,211,255,0.35);
+    }
+
+    code {
+      background: rgba(255,255,255,0.06);
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    @media (min-width: 900px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 700px) {
+      .wrap { padding-right: 18px; }
+    }
+
+    .small {
+      font-size: 13px;
+      color: #9fb0c6;
+    }
+
+    .hr {
+      height: 1px;
+      background: rgba(255,255,255,0.10);
+      margin: 18px 0;
+    }
+
+    /* Optional: make links inside cards consistent */
+    a { color: #9bd3ff; }
   </style>
 </head>
+
 <body>
   <div class="wrap">
-    <h1>Emerging Narrative Detection - Venezuela</h1>
-    <p class="small">Offline, single-file dashboards. Open this page first, then launch the dashboard.</p>
+    <h1>Emerging Narrative Detection in Relation to Venezuela</h1>
+    <p class="small">
+      Research-oriented, offline dashboards for exploring narrative dynamics in crisis-driven information environments.
+    </p>
 
     <div class="card">
       <h2>What this is</h2>
       <p>
-        This dashboard visualizes how narrative clusters drift over time in a shared semantic space.
-        Each time window is clustered (HDBSCAN) over post embeddings; cluster centroids are projected into
-        2D (PCA), and centroids are linked across adjacent windows by similarity to show lineage.
-        As time advances, persistent clusters move through the embedding space, leaving a trajectory
-        that reflects shifts in the conversation.
-        Time windows are labeled as <code>YYYY-MM-DD-HH</code> and use a 12-hour rolling window with a 4-hour step,
-        starting January 2.
+        This dashboard provides an exploratory visualization of how narrative clusters evolve over time within a shared
+        semantic embedding space. Social media posts are embedded and clustered within rolling time windows using
+        density-based clustering (HDBSCAN). Cluster centroids are projected into a two-dimensional space using PCA,
+        and clusters are linked across adjacent windows by semantic similarity to approximate narrative lineage.
       </p>
+      <p>
+        As time advances, clusters that persist across windows trace trajectories through the embedding space,
+        illustrating how dominant narratives emerge, shift, and stabilize in response to external events.
+        Time windows are labeled as <code>YYYY-MM-DD-HH</code> and use a 12-hour rolling window with a 4-hour step,
+        beginning January&nbsp;2.
+      </p>
+
       <div class="btnrow">
-        <a class="btn" href="./ven_narrative_drift_click.html">Open dashboard</a>
+        <a class="btn" href="./ven_narrative_drift_click.html" aria-label="Open narrative drift dashboard">
+          Open dashboard
+        </a>
         <a class="btn secondary" href="#how-to-use">How to use</a>
         <a class="btn secondary" href="#pipeline">Pipeline overview</a>
       </div>
@@ -53,26 +136,56 @@
       <div class="card" id="how-to-use">
         <h2>How to use the dashboard</h2>
         <ul>
-          <li>Use ◀ ▶ to step through time windows (hourly rolling windows).</li>
-          <li>Click a cluster marker to reveal sampled posts (overlay) in the same space.</li>
-          <li>The right-side panel shows an LLM-generated one-paragraph summary for that (window, cluster).</li>
-          <li>Hover on clusters for representative examples and metadata.</li>
+          <li>Use ◀ ▶ to step through rolling time windows.</li>
+          <li>Each marker represents a narrative cluster centroid for a given window.</li>
+          <li>The right-side panel displays an LLM-generated, one-paragraph summary for the selected (window, cluster).</li>
+          <li>Hover over clusters to view representative examples and cluster metadata.</li>
         </ul>
       </div>
     </div>
 
     <div class="card" id="pipeline">
-      <h2>Pipeline overview (what we did)</h2>
+      <h2>Pipeline overview</h2>
       <ol>
-        <li><b>Ingest + clean CSV</b>: normalize fields (post_id, timestamp, text, author_id, etc.).</li>
-        <li><b>Canonical representation</b>: write <code>posts_repr.parquet</code> including embeddings.</li>
-        <li><b>Rolling windows</b>: generate hourly windows (e.g., 12-hour window, 4-hour step) and cluster each window.</li>
-        <li><b>Cluster summaries</b>: sample posts per (window, cluster) and call OpenAI to generate 1-paragraph summaries.</li>
-        <li><b>Dashboard build</b>: compute centroid lineage across windows + PCA projection + inject tweet payload + summaries + navigation.</li>
+        <li>
+          <b>Data ingestion and normalization</b>:
+          Clean and standardize raw CSV data (post identifiers, timestamps, text fields, author metadata).
+        </li>
+        <li>
+          <b>Canonical representation</b>:
+          Construct a unified representation layer (<code>posts_repr.parquet</code>) containing post embeddings and metadata.
+        </li>
+        <li>
+          <b>Rolling window clustering</b>:
+          Apply HDBSCAN within overlapping temporal windows (12-hour window, 4-hour step) to identify narrative groupings.
+        </li>
+        <li>
+          <b>Cluster summarization</b>:
+          Sample representative posts from each (window, cluster) and generate concise titles and summaries using GPT to
+          support rapid sensemaking.
+        </li>
+        <li>
+          <b>Dashboard construction</b>:
+          Track centroid similarity across windows to estimate narrative lineage, project centroids via PCA,
+          and inject sampled posts, summaries, and interactive controls into a static dashboard.
+        </li>
       </ol>
+
       <div class="hr"></div>
+
       <p class="small">
-        Implementation note: the dashboard is a single HTML file with embedded data payloads (tweet samples + summary text), so it works offline.
+        Implementation note: the dashboard is distributed as a single static HTML file with embedded data payloads,
+        allowing it to run offline without external dependencies.
+      </p>
+    </div>
+
+    <div class="card">
+      <p class="small">
+        This dashboard is intended for exploratory analysis and methodological demonstration.
+        Interpretations should be contextualized alongside domain expertise and additional sources.
+      </p>
+      <p class="small">
+        <a href="#" aria-label="Back to top">Back to top ↑</a>
       </p>
     </div>
   </div>

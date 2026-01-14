@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Detecting Emerging Narratives in Relation to Venezuela</title>
   <style>
+  @media (max-width: 700px) {
+    .wrap { padding-right: 18px; }
+  }
+</style>
+  <style>
     body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:#0b0f14; color:#e7edf5; }
     .wrap { max-width: 980px; margin: 0 auto; padding: 28px 18px 60px; }
     h1 { font-size: 28px; margin: 0 0 10px; }
@@ -30,10 +35,12 @@
       <h2>What this is</h2>
       <p>
         This dashboard visualizes how narrative clusters drift over time in a shared semantic space.
-        Each time window is clustered (HDBSCAN) on post embeddings; cluster centroids are projected into 2D (PCA),
-        and we link centroids across adjacent windows by similarity to show lineage. As windows move forward, 
-        clusters that remain may move in its existing hyperplane and leave a trace of the distance it moved. This trace shows a movement in the conversdation in the embedded space.
-        The time window format is displayed year-month-day-hour and uses a 4 hour tweet capture window starting from January 2nd.
+        Each time window is clustered (HDBSCAN) over post embeddings; cluster centroids are projected into
+        2D (PCA), and centroids are linked across adjacent windows by similarity to show lineage.
+        As time advances, persistent clusters move through the embedding space, leaving a trajectory
+        that reflects shifts in the conversation.
+        Time windows are labeled as <code>YYYY-MM-DD-HH</code> and use a 12-hour rolling window with a 4-hour step,
+        starting January 2.
       </p>
       <div class="btnrow">
         <a class="btn" href="./ven_narrative_drift_click.html">Open dashboard</a>

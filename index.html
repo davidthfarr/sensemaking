@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Dynamic Narrative Cartography — Venezuela</title>
+  <title>Detecting Emerging Narratives in Relation to Venezuela</title>
   <style>
     body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:#0b0f14; color:#e7edf5; }
     .wrap { max-width: 980px; margin: 0 auto; padding: 28px 18px 60px; }
@@ -23,7 +23,7 @@
 </head>
 <body>
   <div class="wrap">
-    <h1>Dynamic Narrative Cartography — Venezuela Dataset</h1>
+    <h1>Emerging Narrative Detection - Venezuela</h1>
     <p class="small">Offline, single-file dashboards. Open this page first, then launch the dashboard.</p>
 
     <div class="card">
@@ -49,19 +49,6 @@
           <li>The right-side panel shows an LLM-generated one-paragraph summary for that (window, cluster).</li>
           <li>Hover on clusters for representative examples and metadata.</li>
         </ul>
-        <p class="small">
-          Tip: if a cluster has “No summary found,” the summary keys probably don’t match the evaluated window string exactly.
-        </p>
-      </div>
-
-      <div class="card">
-        <h2>Key artifacts (where things live)</h2>
-        <ul>
-          <li><code>data/processed/venezuela/posts_repr.parquet</code> — canonical representation (post_id, timestamp, text, embedding)</li>
-          <li><code>data/evaluated/ven/hourly/*.parquet</code> — window-level cluster assignments</li>
-          <li><code>data/evaluated/ven/cluster_summaries.parquet</code> — one-paragraph LLM summaries per cluster</li>
-          <li><code>ven_narrative_drift_click.html</code> — interactive dashboard</li>
-        </ul>
       </div>
     </div>
 
@@ -78,15 +65,6 @@
       <p class="small">
         Implementation note: the dashboard is a single HTML file with embedded data payloads (tweet samples + summary text), so it works offline.
       </p>
-    </div>
-
-    <div class="card">
-      <h2>Known gotchas</h2>
-      <ul>
-        <li>Hourly windows must include the hour in the window label (use <code>%H</code>, not <code>%h</code>).</li>
-        <li>If timestamps were saved to CSV, reload with <code>pd.to_datetime(..., utc=True)</code> to avoid strings/NaT.</li>
-        <li>Autoplay can occur when frames exist unless <code>auto_play=False</code> is set when writing HTML.</li>
-      </ul>
     </div>
   </div>
 </body>
